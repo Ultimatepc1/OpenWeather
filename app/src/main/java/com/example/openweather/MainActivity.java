@@ -89,11 +89,11 @@ public class MainActivity extends AppCompatActivity {
 //        downloadweather.execute("https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=439d4b804bc8187953eb36d2a8c26a02");
     }
     public void findweather(View view){
-        String m="http://api.openweathermap.org/data/2.5/weather?q="+cityname.getText()+"&appid=3529bd5a6fdb4cfbe3016fcfff41a366";
+        String m="http://api.openweathermap.org/data/2.5/weather?q="+cityname.getText()+apikey;
         //In our case the api is handling input with spaces but for rest do this
         try {
             String encodedCityName = URLEncoder.encode(cityname.getText() + "", "UTF-8");
-            m="http://api.openweathermap.org/data/2.5/weather?q="+encodedCityName+"&appid=3529bd5a6fdb4cfbe3016fcfff41a366";
+            m="http://api.openweathermap.org/data/2.5/weather?q="+encodedCityName+apikey;
         }
         catch(Exception e){
             Log.i("encoding error",""+e);
